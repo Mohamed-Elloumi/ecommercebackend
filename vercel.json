@@ -13,7 +13,7 @@
     "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "true",
-    "APP_URL": "https://your.url.from.vercel.app",
+    "APP_URL": "https://vercel.com/meds-projects-bf3f1738",
     "APP_KEY": "base64:R2AuRZYotGNGfxy//K9U/NTO7LW7THPXrRsB5KPkhyw=",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
