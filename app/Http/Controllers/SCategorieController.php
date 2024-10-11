@@ -13,7 +13,7 @@ class SCategorieController extends Controller
     public function index()
     {
         try{
-            $scategories=Scategorie::with('categorie')->get(); // Inclut la catégorie liée;
+            $scategories=sCategorie::with('categorie')->get(); // Inclut la catégorie liée;
         return response()->json($scategories,200);
         } catch (\Exception $e) {
         return response()->json("Sélection impossible {$e->getMessage()}");
@@ -26,7 +26,7 @@ class SCategorieController extends Controller
     public function store(Request $request)
     {
         try {
-            $scategorie=new Scategorie([
+            $scategorie=new sCategorie([
             "nomscategorie"=>$request->input("nomscategorie"),
             "imagescategorie"=>$request->input("imagescategorie"),
             "categorieID"=>$request->input("categorieID")
@@ -46,7 +46,7 @@ class SCategorieController extends Controller
     public function show($id)
     {
         try {
-            $scategorie=Scategorie::with('categorie')->findOrFail($id);
+            $scategorie=sCategorie::with('categorie')->findOrFail($id);
             return response()->json($scategorie);
             } catch (\Exception $e) {
             return response()->json("Sélection impossible {$e->getMessage()}");
@@ -59,7 +59,7 @@ class SCategorieController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $scategorie=Scategorie::findorFail($id);
+            $scategorie=sCategorie::findorFail($id);
             $scategorie->update($request->all());
             return response()->json($scategorie);
             } catch (\Exception $e) {
@@ -73,7 +73,7 @@ class SCategorieController extends Controller
     public function destroy($id)
     {
         try {
-            $scategorie=Scategorie::findOrFail($id);
+            $scategorie=sCategorie::findOrFail($id);
             $scategorie->delete();
             return response()->json("Sous catégorie supprimée avec succes");
             } catch (\Exception $e) {
