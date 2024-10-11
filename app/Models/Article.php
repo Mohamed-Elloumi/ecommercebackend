@@ -14,7 +14,7 @@ class Article extends Model
         ];
         public function scategorie()
         {
-        return $this->belongsTo(SCategorie::class,"scategorieID");
+        return $this->belongsTo(sCategorie::class,"scategorieID");
         }
   
 }
